@@ -1,0 +1,174 @@
+{
+    "name": "ControlInput",
+    "maps": [
+        {
+            "name": "InputStreamActionMap",
+            "id": "b3d5f2cb-217a-4643-b9ee-9b61269c5b23",
+            "actions": [
+                {
+                    "name": "aKeyShortPress",
+                    "type": "Button",
+                    "id": "32d915c9-7b00-4587-a99f-464dd1e1d4d9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "dKeyShortPress",
+                    "type": "Button",
+                    "id": "648499e5-2d51-44db-8763-cf106c99e84e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "leftArrowShortPress",
+                    "type": "Button",
+                    "id": "c1fc4f34-9877-4fbb-9335-4e33dfafa28a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "rightArrowShortPress",
+                    "type": "Button",
+                    "id": "a82774a4-4f08-436c-ba01-f555ce3a2802",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "aKeyLongPress",
+                    "type": "Button",
+                    "id": "69146433-f1a9-4e25-8a71-03121b70ac6c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "dKeyLongPress",
+                    "type": "Button",
+                    "id": "1b6d6260-f56c-41e7-b483-f41fc5946f51",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "leftArrowLongPress",
+                    "type": "Button",
+                    "id": "a7d9f7d4-c665-44bc-a889-976d031c7899",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "rightArrowLongPress",
+                    "type": "Button",
+                    "id": "657e7bd3-e872-426f-83db-61d334323e6c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cecb1955-35d9-44ce-a145-95c6d4c477ad",
+                    "path": "<Keyboard>/a",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "aKeyShortPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "caf7b791-5a2b-488a-a839-2e99139c75e7",
+                    "path": "<Keyboard>/a",
+                    "interactions": "Hold(duration=0.2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "aKeyLongPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f4a5b211-3258-4d12-89d5-85aa026d9ca4",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "leftArrowShortPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4cc514e0-2c8d-455d-9f5d-2a1832d32b1d",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "Tap(duration=0.2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "rightArrowShortPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3898d0da-a866-4d49-8841-4c51bcc9d4e6",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "Hold(duration=0.2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "leftArrowLongPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "964adb72-40b3-4a66-ad19-8354813e2d72",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "Hold(duration=0.2,pressPoint=0.5)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "rightArrowLongPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fe77b24e-2fb7-437d-98ce-c758720e0740",
+                    "path": "<Keyboard>/d",
+                    "interactions": "Tap(duration=0.2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "dKeyShortPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "87196a97-d0b2-453d-9d02-9c4364c75ff9",
+                    "path": "<Keyboard>/d",
+                    "interactions": "Hold(duration=0.2,pressPoint=0.5)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "dKeyLongPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
