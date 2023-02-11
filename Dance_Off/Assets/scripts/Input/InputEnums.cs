@@ -14,3 +14,16 @@ public enum InputDurationStates
     LONG_PRESS,
     NONE
 }
+
+public enum TileType
+{
+    SHORT,
+    LONG
+}
+
+public enum TileStates
+{
+    DEFAULT,
+    RIGHT,
+    WRONG
+}

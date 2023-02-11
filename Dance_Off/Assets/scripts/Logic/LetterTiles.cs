@@ -4,13 +4,6 @@ using UnityEngine.UI;
 
 public class LetterTiles : MonoBehaviour
 {
-    public enum TileStates
-    {
-        DEFAULT,
-        RIGHT,
-        WRONG
-    }
-
     public Color defaultColor;
     public Color rightColor;
     public Color wrongColor;
@@ -18,6 +11,8 @@ public class LetterTiles : MonoBehaviour
     TileStates _currentState = TileStates.DEFAULT;
 
     private Image _tileImage;
+
+    public TileType tileType;
 
     private void Start()
     {

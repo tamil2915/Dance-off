@@ -92,6 +92,7 @@ MonoBehaviour:
   defaultColor: {r: 0.9490196, g: 0.6, b: 0.29411766, a: 1}
   rightColor: {r: 0.06893382, g: 0.6509434, b: 0.0521983, a: 1}
   wrongColor: {r: 0.7490196, g: 0.30980393, b: 0.21176471, a: 1}
+  tileType: 1
 --- !u!1 &3638703972529048592
 GameObject:
   m_ObjectHideFlags: 0
