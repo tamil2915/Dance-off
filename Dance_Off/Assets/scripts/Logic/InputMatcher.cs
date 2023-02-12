@@ -17,6 +17,9 @@ public class InputMatcher : MonoBehaviour
 
     public TileManager tileManager;
     public InputManager inputManager;
+
+    public Scorer scorer;
+
    
     private void Start()
     {
@@ -57,9 +60,16 @@ public class InputMatcher : MonoBehaviour
         {
             retVal = true;
         }
-        else
+        else if (key == InputKeyStates.NONE)
         {
             return false;
+        }
+        else
+        {
+            tileManager.UpdateTile(CurrentTileIndex, TileStates.WRONG);
+            
+            scorer.OnHit();
+            retVal = false;
         }
 
         IncrementTileIndex();
@@ -81,8 +91,8 @@ public class InputMatcher : MonoBehaviour
             return;
         float nextCheckpoint = musicObject.timing[currentTileIndex];
 
-        currentWindowOpenTime = nextCheckpoint - .2f;
-        currentWindowCloseTime = nextCheckpoint + .2f;
+        currentWindowOpenTime = nextCheckpoint ;
+        currentWindowCloseTime = nextCheckpoint + .4f;
 /*
         Debug.Log("current window open : " + currentWindowOpenTime);
         Debug.Log("current window close : " + currentWindowCloseTime);*/
@@ -108,6 +118,8 @@ public class InputMatcher : MonoBehaviour
             RefreshWindowIntervals();
 
             Debug.Log("update the tile now");
+
+            scorer.OnHit();
         }
     }
 
