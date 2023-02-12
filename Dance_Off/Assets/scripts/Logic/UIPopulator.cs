@@ -33,6 +33,8 @@ public class UIPopulator : MonoBehaviour
 
     void PopulateUI()
     {
+
+        musicalObject.RandomizeKeys();
         // read from the musical object
         for (int i = 0; i < musicalObject.pairs.Length; i++)
         {

@@ -27,40 +27,22 @@ public class InputManager : MonoBehaviour
     {
         if (!isBusy)
         {
-            if (key == InputKeyStates.NONE || duration == InputDurationStates.NONE)
+            if (key == InputKeyStates.NONE)
                 return;
 
             isBusy = true;
 
             _currentKeyState = key;
-            _currentDurationState = duration;
-        
-            if (inputMatcher.CheckInput(CurrentKey, CurrentDuration)){
-                tileManager.UpdateTile(inputMatcher.CurrentTileIndex, TileStates.RIGHT);
-            }
-            else
-            {
-                tileManager.UpdateTile(inputMatcher.CurrentTileIndex, TileStates.WRONG);
-            }
         }
-        else
-        {
-            if(_currentDurationState == InputDurationStates.LONG_PRESS)
-            {
-                if (_currentKeyState == key && duration == InputDurationStates.NONE) // long press cancelled
-                {
-                    ResetKeys();
-                }
-            }
-            if(_currentDurationState == InputDurationStates.TAP)
-            {
-                if(duration == InputDurationStates.NONE)
-                {
-                    StartCoroutine(ResetAfterSeconds(.1f));
-                }
-            }
-        }
+    }
 
+    public void SignalCancelInput(InputKeyStates key)
+    {
+        if (key == CurrentKey)
+        {
+            isBusy = false;
+            ResetKeys();
+        }
     }
 
     private void ResetKeys()
@@ -68,12 +50,5 @@ public class InputManager : MonoBehaviour
         isBusy = false;
 
         _currentKeyState = InputKeyStates.NONE;
-        _currentDurationState = InputDurationStates.NONE;
-    }
-
-    IEnumerator ResetAfterSeconds(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        ResetKeys();
     }
 }

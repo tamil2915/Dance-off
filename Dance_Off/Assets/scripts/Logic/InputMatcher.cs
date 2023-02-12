@@ -6,8 +6,8 @@ public class InputMatcher : MonoBehaviour
 {
     float elapsedTime;
 
-    float nextWindowOpenTime;
-    float nextWindowCloseTime;
+    float currentWindowOpenTime;
+    float currentWindowCloseTime;
 
     int currentTileIndex;
 
@@ -16,6 +16,8 @@ public class InputMatcher : MonoBehaviour
     public int CurrentTileIndex {get {return currentTileIndex; } }
 
     public TileManager tileManager;
+    public InputManager inputManager;
+   
     private void Start()
     {
         currentTileIndex = 0;
@@ -28,33 +30,41 @@ public class InputMatcher : MonoBehaviour
     private void Update()
     {
         elapsedTime += Time.deltaTime;
+        
+        if (CheckInput(inputManager.CurrentKey))
+        {
+            tileManager.UpdateTile(currentTileIndex-1, TileStates.RIGHT);
+        }
+        else
+        { }
+        
         UpdateWindow();
     }
 
-    public bool CheckInput(InputKeyStates key, InputDurationStates duration)
+    public bool CheckInput(InputKeyStates key)
     {
         bool retVal = false;
 
         if (!CheckWindow())
             return false;
 
-        if (currentTileIndex > musicObject.timing.Length - 1)
+        if (!IsValidIndex())
             return false;
 
         MusicPair pair = musicObject.pairs[currentTileIndex];
         //check input here
-        if (key == pair.key && duration == pair.duration)
+        if (key == pair.key)
         {
             retVal = true;
         }
         else
         {
-            retVal = false;
+            return false;
         }
 
-        currentTileIndex += 1;
+        IncrementTileIndex();
 
-        if (currentTileIndex > musicObject.timing.Length)
+        if (!IsValidIndex())
         {
             Debug.Log("gameover");
             return false;
@@ -65,35 +75,55 @@ public class InputMatcher : MonoBehaviour
         return retVal;
     }
 
-    void UpdateWindow()
-    {
-        if (elapsedTime > nextWindowCloseTime)
-        {
-            tileManager.UpdateTile(CurrentTileIndex, TileStates.WRONG);
-
-            currentTileIndex += 1;
-            RefreshWindowIntervals();
-        }
-    }
-
     void RefreshWindowIntervals()
     {
-        if (currentTileIndex > musicObject.timing.Length - 1)
+        if (!IsValidIndex())
             return;
-        float firstTiming = musicObject.timing[currentTileIndex];
+        float nextCheckpoint = musicObject.timing[currentTileIndex];
 
-        nextWindowOpenTime = firstTiming - .2f;
-        nextWindowCloseTime = firstTiming + .2f;
-
-        Debug.Log(nextWindowOpenTime + " ----- " + nextWindowCloseTime);
+        currentWindowOpenTime = nextCheckpoint - .2f;
+        currentWindowCloseTime = nextCheckpoint + .2f;
+/*
+        Debug.Log("current window open : " + currentWindowOpenTime);
+        Debug.Log("current window close : " + currentWindowCloseTime);*/
     }
+
 
     bool CheckWindow()
     {
-        if (elapsedTime >= nextWindowOpenTime && elapsedTime <= nextWindowCloseTime)
+        if (elapsedTime >= currentWindowOpenTime && elapsedTime <= currentWindowCloseTime)
         {
             return true;
         }
         return false;
+    }
+
+    void UpdateWindow()
+    {
+        if (elapsedTime > currentWindowCloseTime && IsValidIndex())
+        {
+            tileManager.UpdateTile(CurrentTileIndex, TileStates.WRONG);
+
+            IncrementTileIndex();
+            RefreshWindowIntervals();
+
+            Debug.Log("update the tile now");
+        }
+    }
+
+    bool IsValidIndex()
+    {
+        if (currentTileIndex < musicObject.pairs.Length)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    void IncrementTileIndex()
+    {
+        currentTileIndex += 1;
+        Debug.Log("tileindex " + currentTileIndex);
     }
 }

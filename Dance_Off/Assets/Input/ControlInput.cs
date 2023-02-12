@@ -28,42 +28,6 @@ public partial class @ControlInput : IInputActionCollection2, IDisposable
             ""id"": ""b3d5f2cb-217a-4643-b9ee-9b61269c5b23"",
             ""actions"": [
                 {
-                    ""name"": ""aKeyShortPress"",
-                    ""type"": ""Button"",
-                    ""id"": ""32d915c9-7b00-4587-a99f-464dd1e1d4d9"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""dKeyShortPress"",
-                    ""type"": ""Button"",
-                    ""id"": ""648499e5-2d51-44db-8763-cf106c99e84e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""leftArrowShortPress"",
-                    ""type"": ""Button"",
-                    ""id"": ""c1fc4f34-9877-4fbb-9335-4e33dfafa28a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""rightArrowShortPress"",
-                    ""type"": ""Button"",
-                    ""id"": ""a82774a4-4f08-436c-ba01-f555ce3a2802"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""aKeyLongPress"",
                     ""type"": ""Button"",
                     ""id"": ""69146433-f1a9-4e25-8a71-03121b70ac6c"",
@@ -103,20 +67,9 @@ public partial class @ControlInput : IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""cecb1955-35d9-44ce-a145-95c6d4c477ad"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": ""Tap"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""aKeyShortPress"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""caf7b791-5a2b-488a-a839-2e99139c75e7"",
                     ""path"": ""<Keyboard>/a"",
-                    ""interactions"": ""Hold(duration=0.2)"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""aKeyLongPress"",
@@ -125,31 +78,9 @@ public partial class @ControlInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f4a5b211-3258-4d12-89d5-85aa026d9ca4"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": ""Tap"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""leftArrowShortPress"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4cc514e0-2c8d-455d-9f5d-2a1832d32b1d"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": ""Tap(duration=0.2)"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""rightArrowShortPress"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""3898d0da-a866-4d49-8841-4c51bcc9d4e6"",
                     ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": ""Hold(duration=0.2)"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""leftArrowLongPress"",
@@ -160,7 +91,7 @@ public partial class @ControlInput : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""964adb72-40b3-4a66-ad19-8354813e2d72"",
                     ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": ""Hold(duration=0.2,pressPoint=0.5)"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""rightArrowLongPress"",
@@ -169,20 +100,9 @@ public partial class @ControlInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""fe77b24e-2fb7-437d-98ce-c758720e0740"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": ""Tap(duration=0.2)"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""dKeyShortPress"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""87196a97-d0b2-453d-9d02-9c4364c75ff9"",
                     ""path"": ""<Keyboard>/d"",
-                    ""interactions"": ""Hold(duration=0.2,pressPoint=0.5)"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""dKeyLongPress"",
@@ -196,10 +116,6 @@ public partial class @ControlInput : IInputActionCollection2, IDisposable
 }");
         // InputStreamActionMap
         m_InputStreamActionMap = asset.FindActionMap("InputStreamActionMap", throwIfNotFound: true);
-        m_InputStreamActionMap_aKeyShortPress = m_InputStreamActionMap.FindAction("aKeyShortPress", throwIfNotFound: true);
-        m_InputStreamActionMap_dKeyShortPress = m_InputStreamActionMap.FindAction("dKeyShortPress", throwIfNotFound: true);
-        m_InputStreamActionMap_leftArrowShortPress = m_InputStreamActionMap.FindAction("leftArrowShortPress", throwIfNotFound: true);
-        m_InputStreamActionMap_rightArrowShortPress = m_InputStreamActionMap.FindAction("rightArrowShortPress", throwIfNotFound: true);
         m_InputStreamActionMap_aKeyLongPress = m_InputStreamActionMap.FindAction("aKeyLongPress", throwIfNotFound: true);
         m_InputStreamActionMap_dKeyLongPress = m_InputStreamActionMap.FindAction("dKeyLongPress", throwIfNotFound: true);
         m_InputStreamActionMap_leftArrowLongPress = m_InputStreamActionMap.FindAction("leftArrowLongPress", throwIfNotFound: true);
@@ -263,10 +179,6 @@ public partial class @ControlInput : IInputActionCollection2, IDisposable
     // InputStreamActionMap
     private readonly InputActionMap m_InputStreamActionMap;
     private IInputStreamActionMapActions m_InputStreamActionMapActionsCallbackInterface;
-    private readonly InputAction m_InputStreamActionMap_aKeyShortPress;
-    private readonly InputAction m_InputStreamActionMap_dKeyShortPress;
-    private readonly InputAction m_InputStreamActionMap_leftArrowShortPress;
-    private readonly InputAction m_InputStreamActionMap_rightArrowShortPress;
     private readonly InputAction m_InputStreamActionMap_aKeyLongPress;
     private readonly InputAction m_InputStreamActionMap_dKeyLongPress;
     private readonly InputAction m_InputStreamActionMap_leftArrowLongPress;
@@ -275,10 +187,6 @@ public partial class @ControlInput : IInputActionCollection2, IDisposable
     {
         private @ControlInput m_Wrapper;
         public InputStreamActionMapActions(@ControlInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @aKeyShortPress => m_Wrapper.m_InputStreamActionMap_aKeyShortPress;
-        public InputAction @dKeyShortPress => m_Wrapper.m_InputStreamActionMap_dKeyShortPress;
-        public InputAction @leftArrowShortPress => m_Wrapper.m_InputStreamActionMap_leftArrowShortPress;
-        public InputAction @rightArrowShortPress => m_Wrapper.m_InputStreamActionMap_rightArrowShortPress;
         public InputAction @aKeyLongPress => m_Wrapper.m_InputStreamActionMap_aKeyLongPress;
         public InputAction @dKeyLongPress => m_Wrapper.m_InputStreamActionMap_dKeyLongPress;
         public InputAction @leftArrowLongPress => m_Wrapper.m_InputStreamActionMap_leftArrowLongPress;
@@ -292,18 +200,6 @@ public partial class @ControlInput : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_InputStreamActionMapActionsCallbackInterface != null)
             {
-                @aKeyShortPress.started -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnAKeyShortPress;
-                @aKeyShortPress.performed -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnAKeyShortPress;
-                @aKeyShortPress.canceled -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnAKeyShortPress;
-                @dKeyShortPress.started -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnDKeyShortPress;
-                @dKeyShortPress.performed -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnDKeyShortPress;
-                @dKeyShortPress.canceled -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnDKeyShortPress;
-                @leftArrowShortPress.started -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnLeftArrowShortPress;
-                @leftArrowShortPress.performed -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnLeftArrowShortPress;
-                @leftArrowShortPress.canceled -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnLeftArrowShortPress;
-                @rightArrowShortPress.started -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnRightArrowShortPress;
-                @rightArrowShortPress.performed -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnRightArrowShortPress;
-                @rightArrowShortPress.canceled -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnRightArrowShortPress;
                 @aKeyLongPress.started -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnAKeyLongPress;
                 @aKeyLongPress.performed -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnAKeyLongPress;
                 @aKeyLongPress.canceled -= m_Wrapper.m_InputStreamActionMapActionsCallbackInterface.OnAKeyLongPress;
@@ -320,18 +216,6 @@ public partial class @ControlInput : IInputActionCollection2, IDisposable
             m_Wrapper.m_InputStreamActionMapActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @aKeyShortPress.started += instance.OnAKeyShortPress;
-                @aKeyShortPress.performed += instance.OnAKeyShortPress;
-                @aKeyShortPress.canceled += instance.OnAKeyShortPress;
-                @dKeyShortPress.started += instance.OnDKeyShortPress;
-                @dKeyShortPress.performed += instance.OnDKeyShortPress;
-                @dKeyShortPress.canceled += instance.OnDKeyShortPress;
-                @leftArrowShortPress.started += instance.OnLeftArrowShortPress;
-                @leftArrowShortPress.performed += instance.OnLeftArrowShortPress;
-                @leftArrowShortPress.canceled += instance.OnLeftArrowShortPress;
-                @rightArrowShortPress.started += instance.OnRightArrowShortPress;
-                @rightArrowShortPress.performed += instance.OnRightArrowShortPress;
-                @rightArrowShortPress.canceled += instance.OnRightArrowShortPress;
                 @aKeyLongPress.started += instance.OnAKeyLongPress;
                 @aKeyLongPress.performed += instance.OnAKeyLongPress;
                 @aKeyLongPress.canceled += instance.OnAKeyLongPress;
@@ -350,10 +234,6 @@ public partial class @ControlInput : IInputActionCollection2, IDisposable
     public InputStreamActionMapActions @InputStreamActionMap => new InputStreamActionMapActions(this);
     public interface IInputStreamActionMapActions
     {
-        void OnAKeyShortPress(InputAction.CallbackContext context);
-        void OnDKeyShortPress(InputAction.CallbackContext context);
-        void OnLeftArrowShortPress(InputAction.CallbackContext context);
-        void OnRightArrowShortPress(InputAction.CallbackContext context);
         void OnAKeyLongPress(InputAction.CallbackContext context);
         void OnDKeyLongPress(InputAction.CallbackContext context);
         void OnLeftArrowLongPress(InputAction.CallbackContext context);

@@ -11,6 +11,14 @@ public class MusicDataScriptableObject : ScriptableObject
     public float[] timing;
 
     public MusicPair[] pairs;
+
+    public void RandomizeKeys()
+    {
+        for (int i = 0; i < pairs.Length; i++)
+        {
+            pairs[i].key = (InputKeyStates)Mathf.FloorToInt(UnityEngine.Random.Range(0, 4));
+        }
+    }
 }
 
 [Serializable]
