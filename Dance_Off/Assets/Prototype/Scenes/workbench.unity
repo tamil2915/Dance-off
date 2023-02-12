@@ -502,6 +502,7 @@ GameObject:
   - component: {fileID: 870928756}
   - component: {fileID: 870928759}
   - component: {fileID: 870928758}
+  - component: {fileID: 870928760}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -566,6 +567,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d4045d6f9aa0cd46b298ba22ecd4ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputMatcher: {fileID: 870928760}
+  tileManager: {fileID: 1474625804}
+--- !u!114 &870928760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870928755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be6f9b9ab5b6e645a08cf048aed6045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicObject: {fileID: 11400000, guid: 06dbd8b86dac37d40977ff15473aed39, type: 2}
+  tileManager: {fileID: 1474625804}
 --- !u!1 &892721230
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +878,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1474625803}
+  - component: {fileID: 1474625804}
   m_Layer: 5
   m_Name: Scroller
   m_TagString: Untagged
@@ -887,6 +905,18 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000015259, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1474625804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474625802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e809db6d6d47b094c87e71ea70f99fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1701791498
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,7 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60fc60763e0e68d4f848d88bc08339ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 75
   tilesParent: {fileID: 1474625803}
 --- !u!114 &1701791502
 MonoBehaviour:

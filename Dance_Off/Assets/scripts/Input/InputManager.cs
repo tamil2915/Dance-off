@@ -14,6 +14,9 @@ public class InputManager : MonoBehaviour
     public InputKeyStates CurrentKey { get { return _currentKeyState; } }
     public InputDurationStates CurrentDuration { get { return _currentDurationState; } }
 
+    public InputMatcher inputMatcher;
+    public TileManager tileManager;
+
     private void Start()
     {
         _currentKeyState = InputKeyStates.NONE;
@@ -22,8 +25,6 @@ public class InputManager : MonoBehaviour
 
     public void SignalInput(InputKeyStates key, InputDurationStates duration)
     {
-        Debug.Log(key + "     " + duration);
-
         if (!isBusy)
         {
             if (key == InputKeyStates.NONE || duration == InputDurationStates.NONE)
@@ -33,6 +34,14 @@ public class InputManager : MonoBehaviour
 
             _currentKeyState = key;
             _currentDurationState = duration;
+        
+            if (inputMatcher.CheckInput(CurrentKey, CurrentDuration)){
+                tileManager.UpdateTile(inputMatcher.CurrentTileIndex, TileStates.RIGHT);
+            }
+            else
+            {
+                tileManager.UpdateTile(inputMatcher.CurrentTileIndex, TileStates.WRONG);
+            }
         }
         else
         {
@@ -51,6 +60,7 @@ public class InputManager : MonoBehaviour
                 }
             }
         }
+
     }
 
     private void ResetKeys()

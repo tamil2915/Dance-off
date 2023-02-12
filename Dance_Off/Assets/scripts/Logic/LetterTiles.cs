@@ -14,6 +14,11 @@ public class LetterTiles : MonoBehaviour
 
     public TileType tileType;
 
+    public void SetState( TileStates state)
+    {
+        _currentState = state;
+    }
+
     private void Start()
     {
         _tileImage = GetComponent<Image>();
